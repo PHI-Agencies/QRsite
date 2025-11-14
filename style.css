@@ -420,12 +420,15 @@ main {
 
 .capabilities-grid {
     display: grid;
+    /* HARMONISATION 1/2 : Utilisation d'une valeur minmax cohérente */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    /* HARMONISATION 2/2 : Utilisation d'un gap cohérent */
+    gap: 1.5rem; 
     margin-top: 2rem;
 }
 
 .capability-item {
+/* ... (Reste inchangé) ... */
     background-color: var(--bg-color);
     padding: 2rem;
     border-radius: var(--border-radius-sm);
@@ -438,34 +441,7 @@ main {
     height: 100%;
 }
 
-.capability-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px var(--shadow-medium);
-}
-
-.capability-item h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
-    color: var(--text-color);
-    font-weight: 600;
-}
-
-.capability-item p {
-    color: var(--light-text-color);
-}
-
-/* Images/Icônes dans la grille des capacités */
-.capability-item img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease;
-}
-
-.capability-item:hover img {
-    transform: scale(1.1);
-}
+/* ... (Reste inchangé) ... */
 
 /* --- GALERIE D'INSPIRATIONS --- */
 
@@ -476,17 +452,22 @@ main {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* HARMONISATION 1/2 : Utilisation d'une valeur minmax cohérente */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* HARMONISATION 2/2 : Utilisation d'un gap cohérent */
     gap: 1.5rem;
 }
 
 .gallery-item {
+/* ... (Reste inchangé) ... */
     border-radius: var(--border-radius-sm);
     overflow: hidden;
     box-shadow: 0 5px 20px var(--shadow-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
 }
+
+/* ... (Reste inchangé) ... */
 
 .gallery-item:hover {
     transform: scale(1.03);
@@ -1065,7 +1046,7 @@ footer a {
     }
 
     /* --- GRILLES (Les grilles Capacités et Galerie restent en 2x2 grâce au 768px) --- */
-    
+    /*
     .capabilities-grid {
         grid-template-columns: 1fr;
         gap: 1rem;

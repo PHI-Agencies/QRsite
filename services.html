@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services et Réalisations - QR PHI Création</title>
+    <meta name="description" content="Découvrez tous les services de QR PHI : création de comptes TikTok monétisés, pages Facebook, sites Web sur mesure, et nos solutions digitales.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles généraux pour la page Services */
+        :root {
+            /* Assurez-vous que ces variables sont définies dans style.css ou ici si nécessaire */
+            --primary-color: #f7b731; /* Doré/Jaune (Couleur principale QR PHI) */
+            --secondary-color: #fcb41a; /* Orange (Couleur secondaire QR PHI) */
+            --text-color: #333;
+            --light-text-color: #666;
+            --bg-color: #ffffff;
+            --light-bg-color: #f9f9f9;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --border-radius-sm: 8px;
+            --border-radius-main: 12px;
+        }
+
+        /* --- STYLES COMMUNS --- */
+
+        .services-list ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 2rem 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .services-list li {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 1.5rem;
+            border-left: 5px solid var(--primary-color);
+            border-radius: var(--border-radius-sm);
+            box-shadow: 0 4px 15px var(--shadow-light);
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+        
+        .services-list li:hover {
+            transform: translateY(-5px);
+        }
+
+        .client-project {
+            background-color: var(--light-bg-color);
+            padding: 2rem;
+            border-radius: var(--border-radius-main);
+            box-shadow: 0 8px 30px var(--shadow-medium);
+            margin-bottom: 2rem;
+            /* Bordure plus épaisse pour les clients et couleur basée sur le projet */
+            border-left: 10px solid transparent; 
+            transition: border-left-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .client-project:hover {
+            box-shadow: 0 12px 40px var(--shadow-medium);
+        }
+
+        .project-details {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-details h3 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .project-details i {
+            font-size: 3rem;
+            padding: 10px;
+            border-radius: 50%;
+            background-color: var(--bg-color); /* Fond blanc pour l'icône */
+        }
+
+        .project-details p {
+            flex: 1;
+            font-size: 1.1rem;
+            color: var(--light-text-color);
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            justify-content: flex-start;
+        }
+        
+        .btn-project {
+            display: inline-block;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: white; 
+        }
+
+        /* Styles génériques des boutons pour assurer la visibilité */
+        .btn-project.primary-btn {
+            background-color: var(--secondary-color); /* Orange QRPHI par défaut */
+            box-shadow: 0 4px 10px rgba(240, 173, 4, 0.4);
+        }
+        .btn-project.primary-btn:hover {
+            background-color: var(--primary-color); /* Jaune QRPHI au survol */
+            transform: translateY(-2px);
+        }
+
+        
+        .btn-project.secondary-btn:hover {
+            background-color: #495057;
+            transform: translateY(-2px);
+        }
+
+
+        /* --- COULEURS DES PROJETS CLIENTS (Harmonisées) --- */
+        
+        /* Fresh Food: Mélange de vert et jaune */
+        .fresh-food {
+            border-left-color: #8BC34A; /* Vert clair */
+            background-color: #f0f7ed; /* Fond très léger vert-jaune */
+        }
+        .fresh-food .project-details i {
+            color: #FFD600; /* Jaune vif */
+        }
+        .fresh-food .project-details h3 {
+            color: #388E3C; /* Vert foncé */
+        }
+        .fresh-food .btn-project.primary-btn {
+            background-color: #388E3C; /* Bouton Vert foncé */
+        }
+        .fresh-food .btn-project.primary-btn:hover {
+            background-color: #689F38; /* Vert plus clair au survol */
+        }
+        
+        /* Salvador Multi Service: Mélange bleu et blanc */
+        .salvador {
+            border-left-color: #2196F3; /* Bleu primaire */
+            background-color: #e3f2fd; /* Fond très léger bleu */
+        }
+        .salvador .project-details i {
+            color: #2196F3; /* Bleu */
+        }
+        .salvador .project-details h3 {
+            color: #1976D2; /* Bleu foncé */
+        }
+        .salvador .btn-project.primary-btn {
+            background-color: #1976D2; /* Bouton Bleu foncé */
+        }
+        .salvador .btn-project.primary-btn:hover {
+            background-color: #42A5F5; /* Bleu plus clair au survol */
+        }
+
+        /* --- STYLES SOLUTIONS DIGITALES (Harmonisées) --- */
+
+        .digital-solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .solution-card {
+            display: block; 
+            padding: 1.5rem;
+            border-radius: var(--border-radius-sm);
+            text-align: center;
+            box-shadow: 0 4px 15px var(--shadow-light);
+            transition: transform 0.3s ease, border 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+            border-bottom: 8px solid transparent; 
+            color: var(--text-color); 
+            text-decoration: none;
+        }
+
+        .solution-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: inherit; /* Hérite de la couleur de la carte */
+        }
+        .solution-card p {
+            color: var(--light-text-color);
+            font-size: 0.95rem;
+        }
+        
+        /* Bobotech: Jaune et Vert */
+        .bobotech-card {
+            border-color: #CDDC39; /* Vert lime */
+            background-color: #fdfde3; /* Fond très léger jaune */
+        }
+        .bobotech-card h4 {
+            color: #689F38; /* Vert moyen */
+        }
+        .bobotech-card p {
+            color: #757575; /* Gris */
+        }
+        .bobotech-card:hover {
+            transform: translateY(-5px);
+            border-color: #AFB42B;
+            background-color: #FFFACD; /* Jaune plus soutenu */
+        }
+
+        /* Bobotaxi: Noir, Jaune et Vert */
+        .bobotaxi-card {
+            border-color: #FFC107; /* Jaune */
+            background-color: #292727; /* Noir très foncé */
+        }
+        .bobotaxi-card h4 {
+            color: #FFEB3B; /* Jaune vif pour le titre */
+        }
+        .bobotaxi-card p {
+            color: #18c805; /* Gris clair pour le paragraphe */
+        }
+        .bobotaxi-card:hover {
+            transform: translateY(-5px);
+            border-color: #8BC34A; /* Vert au survol */
+            background-color: #fdfcfc; /* Gris foncé */
+        }
+
+        /* --- MEDIA QUERIES --- */
+        @media (max-width: 768px) {
+            .services-list li {
+                font-size: 1rem;
+            }
+            .project-details {
+                flex-direction: column;
+                text-align: center;
+            }
+            .project-buttons {
+                justify-content: center;
+            }
+            .digital-solutions-grid {
+                grid-template-columns: 1fr;
+            }
+            .client-project {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <a href="index.html" class="site-logo">
+                    <img src="logo.png" alt="Logo QR PHI" class="logo-img">
+                    <span class="logo-text">QRPHI</span>
+                </a>
+            </div>
+            
+            <div class="navbar-right">
+                <ul class="nav-links">
+                   <li><a href="index.html">Acceuil</a></li>
+                   <li><a href="services.html">Services</a></li>
+                   <li><a href="promo.html">Promo</a></li>
+                   <li><a href="https://www.tiktok.com/@qrphicreations" target="_blank" rel="noopener noreferrer">Créations</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Ouvrir le menu de navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <header class="hero-section" style="min-height: 400px;">
+        <div class="hero-content">
+            <h1>L'écosystème numérique au service de votre croissance.</h1>
+            <p>De la monétisation de vos réseaux sociaux à la création de plateformes complètes, découvrez comment nous transformons votre présence en ligne.</p>
+        </div>
+    </header>
+
+    <main>
+        
+        <section id="services-offered">
+            <h2 class="section-title">Nos Services Clés</h2>
+            <p class="section-subtitle">Les piliers de notre expertise pour bâtir, optimiser et propulser votre activité numérique.</p>
+
+            <div class="services-list box-style-2">
+                <ul>
+                    <li><i class="fab fa-tiktok" style="color: #000; margin-right: 10px;"></i> Création de comptes TikTok monétisés</li>
+                    <li><i class="fab fa-youtube" style="color: #ff0000; margin-right: 10px;"></i> Création de chaînes YouTube PRO monétisées</li>
+                    <li><i class="fab fa-facebook-f" style="color: #1877f2; margin-right: 10px;"></i> Création de pages Facebook professionnelles</li>
+                    <li><i class="fas fa-desktop" style="color: var(--secondary-color); margin-right: 10px;"></i> Création de sites Web sur mesure (vitrine, e-commerce)</li>
+                    <li><i class="fas fa-bullhorn" style="color: #ff3c00; margin-right: 10px;"></i> Boostage ciblé (publicité, campagnes d'acquisition)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="client-projects">
+            <h2 class="section-title">Nos Réalisations Clients</h2>
+            <p class="section-subtitle">Un aperçu de ce que nous avons créé pour nos partenaires, transformant leurs idées en succès numériques.</p>
+
+            <div class="client-project fresh-food">
+                <div class="project-details">
+                    <i class="fas fa-utensils"></i>
+                    <div>
+                        <h3>Fresh Food</h3>
+                        <p>Création d'une plateforme de commande en ligne moderne et responsive, permettant aux clients de Fresh Food de visualiser le menu et de passer leurs commandes facilement depuis leur mobile.</p>
+                    </div>
+                </div>
+                <div class="project-buttons">
+                    <a href="https://phi-agencies.github.io/Fresh-Food" target="_blank" class="btn-project primary-btn">Voir le site</a>
+                    
+                </div>
+            </div>
+
+            <div class="client-project salvador">
+                <div class="project-details">
+                    <i class="fas fa-hands-helping"></i>
+                    <div>
+                        <h3>Salvador Multi Service</h3>
+                        <p>Développement d'un site vitrine complet présentant les multiples services offerts par Salvador Multi Service, optimisé pour le référencement local et la génération de leads.</p>
+                    </div>
+                </div>
+                <div class="project-buttons">
+                    <a href="https://phi-agencies.github.io/Salvador-Multi-Service" target="_blank" class="btn-project primary-btn">Voir le site</a>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="digital-solutions">
+            <h2 class="section-title">Nos Solutions Digitales PHI</h2>
+            <p class="section-subtitle">Des outils numériques prêts à l'emploi, développés pour des communautés spécifiques, allant du business au développement personnel.</p>
+
+            <div class="digital-solutions-grid">
+                
+                <a href="https://bobotech.onrender.com" target="_blank" class="solution-card bobotech-card">
+                    <h4>Bobotech</h4>
+                    <p>Une plateforme dédiée à la promotion à la vente et à la livraison de produits technologiques.</p>
+                </a>
+                
+                <a href="https://bobotaxi.onrender.com" target="_blank" class="solution-card bobotaxi-card">
+                    <h4>Bobotaxi</h4>
+                    <p>Simplification des déplacements urbains : une solution numérique pour les services de transport local.</p>
+                </a>
+                
+                </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.tiktok.com/@qrphicreations" target="_blank" title="TikTok de QR PHI"><i class="fab fa-tiktok"></i></a>
+            <a href="https://web.facebook.com/profile.php?id=61581623601062" target="_blank" title="Facebook de QR PHI"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://phi-agencies.github.io/QRsite" target="_blank" title="Site Web de PHI Agencies"><i class="fas fa-globe"></i></a>
+        </div>
+        <p>&copy; 2025 QRPHI. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuToggle.classList.toggle('active'); 
+            });
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // Ferme le menu si l'on clique sur un lien sur mobile
+                    if (window.innerWidth <= 768) {
+                        navLinks.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

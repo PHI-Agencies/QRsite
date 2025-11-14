@@ -1065,7 +1065,7 @@ footer a {
     }
 
     /* --- GRILLES (Les grilles Capacités et Galerie restent en 2x2 grâce au 768px) --- */
-    /*
+    
     .capabilities-grid {
         grid-template-columns: 1fr;
         gap: 1rem;

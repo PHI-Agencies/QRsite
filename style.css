@@ -420,15 +420,13 @@ main {
 
 .capabilities-grid {
     display: grid;
-    /* HARMONISATION 1/2 : Utilisation d'une valeur minmax cohérente */
+    /* CORRECTION/HARMONISATION DESKTOP */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    /* HARMONISATION 2/2 : Utilisation d'un gap cohérent */
     gap: 1.5rem; 
     margin-top: 2rem;
 }
 
 .capability-item {
-/* ... (Reste inchangé) ... */
     background-color: var(--bg-color);
     padding: 2rem;
     border-radius: var(--border-radius-sm);
@@ -441,7 +439,34 @@ main {
     height: 100%;
 }
 
-/* ... (Reste inchangé) ... */
+.capability-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px var(--shadow-medium);
+}
+
+.capability-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.capability-item p {
+    color: var(--light-text-color);
+}
+
+/* Images/Icônes dans la grille des capacités */
+.capability-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.capability-item:hover img {
+    transform: scale(1.1);
+}
 
 /* --- GALERIE D'INSPIRATIONS --- */
 
@@ -452,22 +477,18 @@ main {
 
 .gallery-grid {
     display: grid;
-    /* HARMONISATION 1/2 : Utilisation d'une valeur minmax cohérente */
+    /* CORRECTION/HARMONISATION DESKTOP */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    /* HARMONISATION 2/2 : Utilisation d'un gap cohérent */
     gap: 1.5rem;
 }
 
 .gallery-item {
-/* ... (Reste inchangé) ... */
     border-radius: var(--border-radius-sm);
     overflow: hidden;
     box-shadow: 0 5px 20px var(--shadow-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
 }
-
-/* ... (Reste inchangé) ... */
 
 .gallery-item:hover {
     transform: scale(1.03);
@@ -724,44 +745,6 @@ footer a {
     }
 }
 
-/* --- MEDIA QUERIES (RESPONSIVE DESIGN) --- */
-
-@media (max-width: 992px) {
-    main {
-        padding: calc(var(--spacing) * 0.5);
-    }
-
-    /* Le logo est très grand ici aussi */
-    .logo-img {
-        height: 60px; 
-    }
-    .logo-text {
-        font-size: 2.3rem; 
-    }
-
-    .hero-section h1 {
-        font-size: 3rem;
-    }
-    .hero-section p {
-        font-size: 1.1rem;
-    }
-    .section-title {
-        font-size: 2.5rem;
-    }
-    .section-subtitle {
-        font-size: 1.1rem;
-    }
-
-    .nav-links {
-        gap: 1.2rem;
-    }
-
-
-    .product-description h2 {
-        font-size: 2rem;
-    }
-}
-
 @media (max-width: 768px) {
     /* --- NAVIGATION MOBILE --- */
     .nav-links {
@@ -848,8 +831,13 @@ footer a {
         grid-template-columns: repeat(2, 1fr); 
         gap: 1rem;
     }
+    /* AJOUT DE L'ALIGNEMENT VERTICAL POUR ASSURER UNE HAUTEUR DE LIGNE COHÉRENTE */
     .capability-item {
         padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; 
+        height: 100%;
     }
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr); 
@@ -937,18 +925,18 @@ footer a {
 
     /* --- GRILLES 2x2 (Capacités & Galerie) --- */
     .capabilities-grid {
-        /* Rétablissement du 2x2 pour les capacités */
+        /* Maintien du 2x2 pour les capacités et réduction du gap */
         grid-template-columns: repeat(2, 1fr); 
-        gap: 0.75rem; /* Réduction du gap pour laisser plus de place */
+        gap: 0.75rem; 
     }
     .capability-item {
         /* Réduction du padding pour donner plus d'espace au contenu */
         padding: 1rem; 
     }
     .gallery-grid {
-        /* Rétablissement du 2x2 pour la galerie */
+        /* Maintien du 2x2 pour la galerie et réduction du gap */
         grid-template-columns: repeat(2, 1fr); 
-        gap: 0.5rem; /* Réduction maximale pour la galerie */
+        gap: 0.5rem; 
     }
     
     .box-style-2 {

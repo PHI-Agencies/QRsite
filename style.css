@@ -333,10 +333,23 @@ main {
 
 /* --- SECTION PRODUITS (Desktop) --- */
 
+/* MISE À JOUR : Applique la même "boîte principale" que #qr-capabilities */
 #products-section {
-    padding-top: calc(var(--spacing) * 2);
-    padding-bottom: calc(var(--spacing) * 2);
+    background-color: var(--light-bg-color);
+    border-radius: var(--border-radius-main);
+    padding: calc(var(--spacing) * 2);
+    box-shadow: 0 15px 40px var(--shadow-medium);
+    margin: calc(var(--spacing) * 2) auto;
+    max-width: 1200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+#products-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px var(--shadow-deep);
+}
+/* FIN MISE À JOUR */
+
 
 .product-item {
     display: flex;
@@ -414,7 +427,7 @@ main {
 /* --- SECTION CAPACITÉS --- */
 
 #qr-capabilities {
-    padding: 0 var(--spacing);
+    /* NETTOYAGE : Le padding et les marges sont maintenant gérés par la classe box-style-2 dans le HTML */
     text-align: center;
 }
 
@@ -803,8 +816,8 @@ footer a {
     /* --- SECTION PRODUITS 2x2 (Tablette) --- */
     #products-section {
         display: block; 
-        padding-top: calc(var(--spacing) * 1.5);
-        padding-bottom: calc(var(--spacing) * 1.5);
+        /* Réduction du padding ici pour les tablettes car il est très grand */
+        padding: calc(var(--spacing) * 1.5); 
     }
     
     .product-item {
@@ -901,6 +914,8 @@ footer a {
     /* --- SECTION PRODUITS 1x1 (Mobile, Empilement Vertical) --- */
     #products-section {
         display: block; 
+        /* Réduction du padding ici pour les mobiles */
+        padding: var(--spacing); 
     }
     
     .product-item {
